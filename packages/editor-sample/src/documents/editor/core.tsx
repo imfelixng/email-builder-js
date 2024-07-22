@@ -22,6 +22,7 @@ import ContainerPropsSchema from '../blocks/Container/ContainerPropsSchema';
 import EmailLayoutEditor from '../blocks/EmailLayout/EmailLayoutEditor';
 import EmailLayoutPropsSchema from '../blocks/EmailLayout/EmailLayoutPropsSchema';
 import EditorBlockWrapper from '../blocks/helpers/block-wrappers/EditorBlockWrapper';
+import { RichText, RichTextPropsSchema } from '../blocks/block-rich-text';
 
 const EDITOR_DICTIONARY = buildBlockConfigurationDictionary({
   Avatar: {
@@ -114,6 +115,14 @@ const EDITOR_DICTIONARY = buildBlockConfigurationDictionary({
     Component: (props) => (
       <EditorBlockWrapper>
         <Divider {...props} />
+      </EditorBlockWrapper>
+    ),
+  }, // CUSTOM BLOCKS
+  RichText: {
+    schema: RichTextPropsSchema,
+    Component: (props) => (
+      <EditorBlockWrapper>
+        <RichText {...props} />
       </EditorBlockWrapper>
     ),
   },

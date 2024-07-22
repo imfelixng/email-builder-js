@@ -5,6 +5,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "type": "module",
   "exports": {
     ".": {
       "require": "./dist/index.js",
@@ -23,7 +24,8 @@
   "peerDependencies": {
     "react": "^16 || ^17 || ^18",
     "react-dom": "^16 || ^17 || ^18",
-    "zod": "^1 || ^2 || ^3"
+    "zod": "^1 || ^2 || ^3",
+    "zustand": "^4"
   },
   "dependencies": {
     "@usewaypoint/block-avatar": "^0.0.3",
@@ -37,5 +39,8 @@
     "@usewaypoint/block-spacer": "^0.0.3",
     "@usewaypoint/block-text": "^0.0.6",
     "@usewaypoint/document-core": "^0.0.6"
+  },
+  "devDependencies": {
+    "zustand": "^4.5.4"
   }
 }

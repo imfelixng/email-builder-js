@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { MonitorOutlined, PhoneIphoneOutlined } from '@mui/icons-material';
 import { Box, Stack, SxProps, ToggleButton, ToggleButtonGroup, Tooltip } from '@mui/material';
-import { Reader } from '@usewaypoint/email-builder';
+import { Reader, useReaderBlockDictStore } from '@usewaypoint/email-builder';
 
+import { RichTextPropsSchema, RichTextReader } from '../../documents/blocks/block-rich-text';
 import EditorBlock from '../../documents/editor/EditorBlock';
 import {
   setSelectedScreenSize,
@@ -25,6 +26,12 @@ export default function TemplatePanel() {
   const document = useDocument();
   const selectedMainTab = useSelectedMainTab();
   const selectedScreenSize = useSelectedScreenSize();
+
+  const readerBlockDictStore = useReaderBlockDictStore();
+
+  useEffect(() => {
+    readerBlockDictStore.addBlock('RichText', { schema: RichTextPropsSchema, Component: RichTextReader });
+  }, []);
 
   let mainBoxSx: SxProps = {
     height: '100%',

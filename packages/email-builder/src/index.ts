@@ -13,3 +13,5 @@ export {
   TReaderProps,
   default as Reader,
 } from './Reader/core';
+
+export { useReaderBlockDictStore } from './Reader/config';
